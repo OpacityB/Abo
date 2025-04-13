@@ -102,9 +102,11 @@ function docounter()
 	dosound()
 	twsrvc:Create(button, TweenInfo.new(0.3), {Size = normalsize, TextTransparency = 0, Rotation = 0}):Play()
 	lastcounter = task.delay(cfg.forlasttime, function()
-		button:Remove()
 		doone = 0
 		lastcounter = nil
+		twsrvc:Create(button, TweenInfo.new(0.2), {BackgroundTransparency = 1, TextTransparency = 1}):Play()
+		wait(0.2)
+		button:Remove()
 	end)
 end
 if not cfg.debugmode then
