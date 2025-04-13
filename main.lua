@@ -9,6 +9,7 @@
 
 local cfg = {
 	SoundId = "rbxassetid://9062373867",
+	SoundVolume = 3,
 	forlasttime = 5,
 	debugmode = false
 }
@@ -38,7 +39,7 @@ function dosound()
 	sound.SoundId = cfg.SoundId
 	sound.Parent = scrgui
 	sound.PlaybackSpeed = 1+math.clamp((doone/20), 0, 0.5)
-	sound.Volume = 3
+	sound.Volume = cfg.SoundVolume
 	sound:Play()
 	sound.Ended:Connect(function()
 		sound:Remove()
