@@ -18,6 +18,8 @@ local lastcounter = nil
 
 local doone = 0
 
+local ofalltime = 0
+
 local maxdo = 0
 
 local twsrvc = game:GetService("TweenService")
@@ -52,6 +54,7 @@ function dobutton()
 	button.Size = normalsize
 	button.AnchorPoint = Vector2.new(0.5,0.5)
 	button.TextColor3 = Color3.fromRGB(255,0,0)
+	button.Font = Enum.Font.RobotoMono
 	button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	button.TextScaled = true
 	button.BackgroundTransparency = 0.5
@@ -61,18 +64,27 @@ function dobutton()
 end
 
 local button1 = dobutton()
-button1.Position = UDim2.new(0.5, 0, 0.023, 0)
+button1.Position = UDim2.new(0.448, 0, 0.023, 0)
 button1.Size = UDim2.new(0.092, 0, 0.046, 0)
-button1.Name = "Undelete"
+button1.Name = "Undelete"	
 button1.Parent = scrgui
 button1.Text = maxdo
+local button2 = dobutton()
+button2.Position = UDim2.new(0.546, 0, 0.023, 0)
+button2.Size = UDim2.new(0.092, 0, 0.046, 0)
+button2.TextColor3 = Color3.fromRGB(0, 68, 255)
+button2.Name = "Undelete"	
+button2.Parent = scrgui
+button2.Text = ofalltime
 
 function docounter()
 	doone += 1
+	ofalltime += 1
 	if maxdo < doone then
 		maxdo = doone
 	end
 	button1.Text = maxdo
+	button2.Text = ofalltime
 	for i,v in pairs(scrgui:GetChildren()) do
 		if v.Name ~= "Undelete" then
 			v:Remove()
