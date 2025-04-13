@@ -21,14 +21,14 @@ local maxdo = 0
 
 local twsrvc = game:GetService("TweenService")
 
-if game.Player.LocalPlayer.PlayerGui:FindFirstChild("CountHits") then
-	game.Player.LocalPlayer.PlayerGui:FindFirstChild("CountHits"):Remove()
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("CountHits") then
+	game.Players.LocalPlayer.PlayerGui:FindFirstChild("CountHits"):Remove()
 end
 
 local scrgui = Instance.new("ScreenGui")
 scrgui.ResetOnSpawn = false
 scrgui.IgnoreGuiInset = true
-scrgui.Name == "CountHits"
+scrgui.Name = "CountHits"
 scrgui.Parent = game.Players.LocalPlayer.PlayerGui
 
 local normalsize = UDim2.new(0.092, 0, 0.046, 0)
