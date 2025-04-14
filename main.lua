@@ -11,7 +11,8 @@ local cfg = {
 	SoundId = "rbxassetid://9062373867",
 	SoundVolume = 3,
 	forlasttime = 5,
-	debugmode = false
+	debugmode = false,
+	scrguiname = "CountHits" -- useful if game detects that gui name [the gui will be recreated if the name from the past is the same] [and don't use the same names as in the player gui you have]
 }
 
 local lastcounter = nil
@@ -31,7 +32,7 @@ end
 local scrgui = Instance.new("ScreenGui")
 scrgui.ResetOnSpawn = false
 scrgui.IgnoreGuiInset = true
-scrgui.Name = "CountHits"
+scrgui.Name = cfg.scrguiname
 scrgui.Parent = game.Players.LocalPlayer.PlayerGui
 
 local normalsize = UDim2.new(0.092, 0, 0.046, 0)
