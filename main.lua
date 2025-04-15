@@ -8,7 +8,7 @@
 -- forlasttime its a setting where you can change time from last hit default 5
 
 local cfg = {
-	SoundId = "rbxassetid://4516507682",
+	SoundId = "rbxassetid://9062373867",
 	SoundVolume = 3,
 	forlasttime = 5,
 	debugmode = false,
