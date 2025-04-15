@@ -12,6 +12,7 @@ local cfg = {
 	SoundVolume = 3,
 	forlasttime = 5,
 	debugmode = false,
+	removegui = false, -- if you wanna close the script and remove gui
 	scrguiname = "CountHits" -- useful if game detects that gui name [the gui will be recreated if the name from the past is the same] [and don't use the same names as in the player gui you have]
 }
 
@@ -27,6 +28,9 @@ local twsrvc = game:GetService("TweenService")
 
 if game.Players.LocalPlayer.PlayerGui:FindFirstChild("CountHits") then
 	game.Players.LocalPlayer.PlayerGui:FindFirstChild("CountHits"):Remove()
+	if cfg.removegui then
+		script:Remove()
+	end
 end
 
 local scrgui = Instance.new("ScreenGui")
